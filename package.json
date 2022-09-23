@@ -8,6 +8,7 @@
     "compile": "tsc",
     "dev": "nodemon ./src/index.ts",
     "prettify": "prettier -w src",
+    "prettify:check": "prettier -c src",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src"
   },

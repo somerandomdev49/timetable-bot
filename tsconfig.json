@@ -11,7 +11,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true
-  },
-  // "include": ["src"],
-  "exclude": ["src/bot.ts"]
+  }
 }
