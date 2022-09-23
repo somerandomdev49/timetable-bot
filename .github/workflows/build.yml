@@ -42,11 +42,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       
-      - name: Check for style
-        run: pnpm lint
-      
       - name: Prettify code
         run: pnpm prettify
       
       - name: Compiling
         run: pnpm compile
+
+      - name: Check for style
+        run: pnpm lint
