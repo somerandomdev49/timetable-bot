@@ -13,7 +13,7 @@ composer.command('code', async (ctx) => {
 
   if (await hasUserAccess(userId)) {
     if (!code) {
-      return ctx.reply(`${MSGS.usersCode} ${String(userId).slice(3)}`);
+      return ctx.reply(`${MSGS.usersCode} ${String(userId).slice(3, 9)}`);
     }
     return ctx.reply(MSGS.error);
   }
