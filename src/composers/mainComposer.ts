@@ -1,6 +1,6 @@
 import { Composer } from 'grammy';
 import MSGS from '../messages';
-import { bot } from '..';
+import { bot } from '../init';
 import CustomContext from '../types/CustomContext';
 import delay from '../utils/delay';
 

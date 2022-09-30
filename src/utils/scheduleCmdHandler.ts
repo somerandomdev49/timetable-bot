@@ -1,6 +1,6 @@
 import { InlineKeyboard } from 'grammy';
 import MSGS from '../messages';
-import { bot } from '..';
+import { bot } from '../init';
 import CustomContext from '../types/CustomContext';
 import Data from '../types/FilesData';
 import getFiles from './getFiles';

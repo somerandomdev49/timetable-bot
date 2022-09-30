@@ -1,7 +1,7 @@
 // import fetch from "node-fetch"
 import type { Sheet, WorkBook } from 'xlsx';
 import xlsx from 'xlsx';
-import { drive } from '..';
+import { drive } from '../init';
 import Lesson from '../types/Lesson';
 import getExternalSchedule from './getExternalSchedule';
 import 'dotenv/config';

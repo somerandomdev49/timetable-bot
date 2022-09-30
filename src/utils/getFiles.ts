@@ -1,4 +1,4 @@
-import { drive } from '..';
+import { drive } from '../init';
 import Data from '../types/FilesData';
 
 export default async function getFiles(name: string): Promise<Data> {

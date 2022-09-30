@@ -1,6 +1,6 @@
 import { Composer, InlineKeyboard } from 'grammy';
 import MSGS from '../messages';
-import { bot } from '..';
+import { bot } from '../init';
 import CustomContext from '../types/CustomContext';
 import Lesson from '../types/Lesson';
 import getBreakSchedule from '../utils/getBreakSchedule';

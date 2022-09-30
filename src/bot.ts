@@ -10,35 +10,40 @@ import SessionData from './types/SessionData';
 import 'dotenv/config';
 import serviceComposer from './composers/serviceComposer';
 import authMiddleware from './authMiddleware';
-import { bot } from '.';
+import { bot } from './init';
 
 // TODO: move all main logic to external file and save only bot here
 
-bot.use(
-  session({
-    initial(): SessionData {
-      return {
-        route: '',
-        user: {
-          name: '',
-          class: 0,
-        },
-        data: null,
-      };
-    },
-  })
-);
+function startup(): void {
+  bot.use(
+    session({
+      initial(): SessionData {
+        return {
+          route: '',
+          user: {
+            name: '',
+            class: 0,
+          },
+          data: null,
+        };
+      },
+    })
+  );
 
-bot.use(checkUser);
+  bot.use(checkUser);
 
-bot.use(mainComposer);
+  bot.use(mainComposer);
 
-// * [MARKETING MODULE] middleware for /code PROCESSING
-bot.use(serviceComposer);
+  // * [MARKETING MODULE] middleware for /code PROCESSING
+  bot.use(serviceComposer);
 
-// * [MARKETING MODULE] middleware for checking users
-bot.use(authMiddleware);
+  // * [MARKETING MODULE] middleware for checking users
+  bot.use(authMiddleware);
 
-bot.use(scheduleRouter);
+  bot.use(scheduleRouter);
 
-bot.use(scheduleComposer);
+  bot.use(scheduleComposer);
+}
+
+// eslint-disable-next-line import/prefer-default-export
+export { startup };
