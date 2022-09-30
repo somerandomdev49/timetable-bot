@@ -28,7 +28,7 @@ export async function getSheet(fildeId: string, pageNum = 0): Promise<Sheet> {
 // * function for parsing day schedule by 3 field for each iteration; takes: downloaded sheet buffer, day number(0-6)
 function tableParse(sheet: Sheet, rawDay: number): Lesson[] | null {
   const data: Lesson[] = [];
-  let day = rawDay
+  let day = rawDay;
 
   if (day === 7) day = 1;
 

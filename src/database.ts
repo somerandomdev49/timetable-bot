@@ -1,4 +1,4 @@
-import { client as redis } from '.'
+import { client as redis } from '.';
 
 export interface UserData {
   code: number;
