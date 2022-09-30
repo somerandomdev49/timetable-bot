@@ -1,7 +1,7 @@
 // import fetch from "node-fetch"
 import type { Sheet, WorkBook } from 'xlsx';
 import xlsx from 'xlsx';
-import { drive } from '../new_bot';
+import { drive } from '..';
 import Lesson from '../types/Lesson';
 import getExternalSchedule from './getExternalSchedule';
 import 'dotenv/config';
@@ -26,8 +26,9 @@ export async function getSheet(fildeId: string, pageNum = 0): Promise<Sheet> {
 }
 
 // * function for parsing day schedule by 3 field for each iteration; takes: downloaded sheet buffer, day number(0-6)
-function tableParse(sheet: Sheet, day: number): Lesson[] | null {
+function tableParse(sheet: Sheet, rawDay: number): Lesson[] | null {
   const data: Lesson[] = [];
+  let day = rawDay
 
   if (day === 7) day = 1;
 

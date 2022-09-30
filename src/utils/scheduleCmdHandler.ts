@@ -1,6 +1,6 @@
 import { InlineKeyboard } from 'grammy';
 import MSGS from '../messages';
-import bot from '../new_bot';
+import { bot } from '..';
 import CustomContext from '../types/CustomContext';
 import Data from '../types/FilesData';
 import getFiles from './getFiles';
@@ -54,7 +54,7 @@ export default async function handler(ctx: CustomContext): Promise<void> {
       for (let i = 0; i < res.length; i++) {
         if (i > 0 && i % 2 === 0) keyboard.row();
         const cls = classes[i][0];
-        const id = classes[i][1];
+        // const id = classes[i][1];
         keyboard.text(classEmoji[+cls - 8], `${cls.padStart(2, '0')}`);
       }
 
@@ -78,30 +78,3 @@ export default async function handler(ctx: CustomContext): Promise<void> {
     // check if user is found
     await bot.api.pinChatMessage(btns.chat.id, btns.message_id);
 }
-
-// export default async function tempHandler(ctx: CustomContext): Promise<void> {
-//   let msg = 'выбери класс';
-//   let payload = {};
-
-//   // send classes keyboard
-//   const keyboard = new InlineKeyboard();
-
-//   for (let i = 0; i < 4; i++) {
-//     for (let j = 0; j < classes[i].length; j++) {
-//       keyboard.text(
-//         `${i + 8}-${j + 1}`,
-//         `${`${8 + i}${classes[i][j]}`.padStart(3, '0')}`
-//       );
-//     }
-//     keyboard.row();
-//   }
-
-//   ctx.session.route = 'schedule-class-select';
-
-//   msg = 'выбери свой класс';
-//   payload = { reply_markup: keyboard };
-
-//   console.log(payload);
-
-//   await ctx.reply(msg, payload);
-// }

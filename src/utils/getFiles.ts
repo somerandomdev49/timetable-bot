@@ -1,4 +1,4 @@
-import { drive } from '../new_bot';
+import { drive } from '..';
 import Data from '../types/FilesData';
 
 export default async function getFiles(name: string): Promise<Data> {

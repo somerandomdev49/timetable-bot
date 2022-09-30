@@ -1,4 +1,4 @@
-import { client as redis } from './new_bot';
+import { client as redis } from '.'
 
 export interface UserData {
   code: number;

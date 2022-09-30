@@ -27,7 +27,7 @@ async function getExternalSchedule(
   for (let row = 5; row < 11; row += 3) {
     const title: string = sheet[utils.encode_cell({ r: row, c })]?.v;
     const room: string = sheet[utils.encode_cell({ r: row + 1, c })]?.v;
-    const teacher: string = sheet[utils.encode_cell({ r: row + 2, c })]?.v;
+    // const teacher: string = sheet[utils.encode_cell({ r: row + 2, c })]?.v;
 
     data.push({
       title: (title.length > 17 ? `${title.slice(0, 17)}...` : title) || 'MAI',

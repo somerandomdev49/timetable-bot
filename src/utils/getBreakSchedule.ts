@@ -1,6 +1,6 @@
 import type { Sheet, WorkBook } from 'xlsx';
 import xlsx from 'xlsx';
-import { drive } from '../new_bot';
+import { drive } from '..';
 // import fetch from "node-fetch";
 import { Break } from './utils';
 

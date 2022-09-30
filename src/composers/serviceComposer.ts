@@ -6,6 +6,7 @@ import CustomContext from '../types/CustomContext';
 const composer = new Composer<CustomContext>();
 
 // FIXME: authed user can use this cmd too
+// eslint-disable-next-line consistent-return
 composer.command('code', async (ctx) => {
   if (!ctx.from?.id) throw new Error('userId is missing');
   const userId = ctx.from.id;
