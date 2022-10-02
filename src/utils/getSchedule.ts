@@ -88,20 +88,6 @@ export default async function getSchedule(query: string): Promise<Lesson[]> {
         break;
       case 9:
         pageNum = 1;
-        return [
-          {
-            title: 'Технопарк',
-            number: 0,
-            group: '',
-            room: '',
-          },
-          {
-            title: 'весь день',
-            number: 0,
-            group: '',
-            room: '',
-          },
-        ];
         break;
       case 10:
         pageNum = 0;
