@@ -77,7 +77,6 @@ composer.on('callback_query', async (ctx) => {
   return 0 as unknown; // fix for return in arraw function
 });
 
-// eslint-disable-next-line consistent-return
 composer.command('breakschedule', async (ctx) => {
   // ctx.session.route = 'breakschedule'
   // await ctx.reply('send me your class')
@@ -90,7 +89,12 @@ composer.command('breakschedule', async (ctx) => {
     const chat = await bot.api.getChat(ctx.chat.id);
     const inlineBtn: any =
       chat.pinned_message?.reply_markup?.inline_keyboard[0][0];
-    if (!inlineBtn) return ctx.reply(MSGS.error);
+
+    if (!inlineBtn) {
+      ctx.reply(MSGS.error);
+      return;
+    }
+
     const query: string = inlineBtn?.callback_data.slice(1); // FIXME: types issue
     classNumber = +query.slice(query.length - 2);
   }
